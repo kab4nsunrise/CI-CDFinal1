@@ -17,7 +17,7 @@ jobs:
       - name: Setup Go
         uses: actions/setup-go@v5
         with:
-          go-version: '1.21'
+          go-version: '1.24'
       - name: Run tests
         run: go test -v ./...
 
@@ -40,4 +40,6 @@ jobs:
         with:
           context: .
           push: true
-          tags: ${{ github.ref_name }}
+          tags: |
+            kab4nsunrise/parcel-tracker:latest
+            kab4nsunrise/parcel-tracker:${{ github.ref_name }}
